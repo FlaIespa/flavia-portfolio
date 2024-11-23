@@ -2,13 +2,16 @@ import Container from "@/components/Container";
 import { useEffect, useRef, Suspense, useState } from "react";
 import styles from "@/styles/Home.module.css";
 import { Button } from "@/components/ui/button";
-import {
+import { 
+  Code2, 
+  Server, 
+  Database, 
+  Cloud, 
+  Eye, 
+  TrendingUp, 
+  MonitorSmartphone, 
+  BarChart, 
   ChevronRight,
-  Code2,
-  Frame,
-  SearchCheck,
-  Eye,
-  MonitorSmartphone,
 } from "lucide-react";
 import { TriangleDownIcon } from "@radix-ui/react-icons";
 import Spline from "@splinetool/react-spline";
@@ -29,40 +32,52 @@ import { motion } from "framer-motion";
 
 const aboutStats = [
   { label: "Years of experience", value: "3+" },
-  { label: "Technologies mastered", value: "5+" },
-  { label: "Companies worked with", value: "15+" },
+  { label: "Technologies mastered", value: "15+" },
+  { label: "Companies worked with", value: "5+" },
 ];
 
 const projects = [
   {
-    title: "Unqueue",
-    description: "E-commerce platform for selling digital products",
-    image: "/assets/unqueue.webm",
-    href: "https://unqueue.shop/",
+    title: "Bendcircular Website Enhancement",
+    description: "Optimized website UI with Storyblok CMS and improved SEO metrics using Lighthouse",
+    image: "/assets/bendcircular.png",
+    href: "https://www.bendcircular.com/", 
   },
   {
-    title: "InfiniteVPS",
-    description: "High performance VPS hosting solution",
-    image: "/assets/infinitevps.webm",
-    href: "#",
+    title: "Task Management App",
+    description: "A full-featured task management application designed to enhance productivity, built with a focus on user-friendly design and efficient task organization.",
+    image: "/assets/webapp.png",
+    href: "https://github.com/FlaIespa/cs162-webapp",
   },
   {
-    title: "TranslateBot",
-    description: "Powerful Multilingual Translation Bot for Discord",
-    image: "/assets/translate_bot.webm",
-    href: "https://translatebot.app/",
+    title: "Health Database",
+    description: "A universal health database designed to consolidate health records globally, enabling seamless access and real-time updates for patients and healthcare providers.",
+    image: "/assets/healthdatabase.png",
+    href: "https://github.com/FlaIespa/HealthDatabase",
   },
   {
-    title: "Wrona",
-    description: "Robotics-focused technology company",
-    image: "/assets/wrona.jpeg",
-    href: "https://www.wrona.com/",
+    title: "INBOT - AI Internal Inquiry Assistant",
+    description: "An intelligent internal inquiry assistant that uses AI to streamline information retrieval within organizations, improving response time and operational efficiency.",
+    image: "/assets/inbot.png",
+    href: "https://github.com/FlaIespa/INBOT-AI-Internal-Inquiry-Assistant",
   },
   {
-    title: "This website",
-    description: "My personal website",
-    image: "/assets/portfolio.webm",
-    href: "https://github.com/wendoj/portfolio",
+    title: "ID8",
+    description: "A plataform that validates startup ideas for founders.",
+    image: "/assets/startup.png",
+    href: "https://github.com/ucey-star/ID8",
+  },
+  {
+    title: "Tic-Tac-Toe",
+    description: "Classic Tic-Tac-Toe game with an AI opponent using the minimax algorithm with alpha-beta pruning.",
+    image: "/assets/tictactoe.png",
+    href: "https://github.com/FlaIespa/CS152-AI-Tic-Tac-Toe",
+  },
+  {
+    title: "Math Game",
+    description: "Classic Tic-Tac-Toe game with an AI opponent using the minimax algorithm with alpha-beta pruning.",
+    image: "/assets/mathgame.png",
+    href: "https://github.com/FlaIespa/Math_game",
   },
 ];
 
@@ -70,32 +85,50 @@ const services = [
   {
     service: "Frontend Development",
     description:
-      "Creating stellar user interfaces and web experiences using the latest technologies.",
+      "Creating engaging user interfaces and dynamic web experiences using React.js, TypeScript, and Storyblok.",
     icon: Code2,
   },
   {
-    service: "UX Design",
+    service: "Full-Stack Development",
     description:
-      "Building intuitive, user-centric designs that drive engagement and conversion.",
-    icon: Frame,
+      "Delivering end-to-end web solutions, including frontend, backend, and seamless API integration using Flask, React.js, and Supabase.",
+    icon: Server,
   },
   {
-    service: "SEO Optimization",
+    service: "Data Engineering & ETL Pipelines",
     description:
-      "Enhancing your website's visibility in search engines for increased organic traffic.",
-    icon: SearchCheck,
+      "Designing and implementing efficient data pipelines with tools like Apache NiFi, Pandas, and AWS Redshift to ensure seamless data processing.",
+    icon: Database,
   },
   {
-    service: "Responsive Design",
+    service: "Cloud Solutions",
     description:
-      "Designing websites that look and perform equally well on all devices and screen sizes.",
-    icon: MonitorSmartphone,
+      "Leveraging AWS services like S3, Lambda, and Redshift to build scalable and secure cloud-based applications.",
+    icon: Cloud,
   },
   {
     service: "Backend Development",
     description:
-      "Developing robust, scalable server-side logic for a wide range of web applications.",
+      "Building robust server-side applications and APIs using Python, Flask, and Express.js.",
     icon: Eye,
+  },
+  {
+    service: "Performance Optimization",
+    description:
+      "Improving website performance, accessibility, and SEO metrics using tools like Lighthouse and best development practices.",
+    icon: TrendingUp,
+  },
+  {
+    service: "Responsive Design",
+    description:
+      "Crafting adaptable and responsive websites that offer optimal user experiences across all devices.",
+    icon: MonitorSmartphone,
+  },
+  {
+    service: "Data Visualization",
+    description:
+      "Creating insightful dashboards and visualizations with tools like Flask and React to enhance decision-making.",
+    icon: BarChart,
   },
 ];
 
@@ -191,8 +224,11 @@ export default function Home() {
               className="flex flex-row items-center space-x-1.5"
             >
               <span className={styles.pill}>next.js</span>
-              <span className={styles.pill}>tailwindcss</span>
+              <span className={styles.pill}>python</span>
               <span className={styles.pill}>typescript</span>
+              <span className={styles.pill}>react</span>
+              <span className={styles.pill}>aws</span>
+              <span className={styles.pill}>flask</span>
             </div>
             <div>
               <h1
@@ -206,7 +242,7 @@ export default function Home() {
                   <br />
                 </span>
                 <span className="clash-grotesk text-gradient text-6xl 2xl:text-8xl">
-                  WendoJ.
+                  Flávia
                 </span>
               </h1>
               <p
@@ -215,8 +251,9 @@ export default function Home() {
                 data-scroll-speed=".06"
                 className="mt-1 max-w-lg tracking-tight text-muted-foreground 2xl:text-xl"
               >
-                An experienced full-stack website developer with a passion for
-                crafting unique digital experiences.
+                An experienced full-stack developer with a background in computer science and cognitive neuroscience, driven by a passion for crafting seamless, 
+                impactful digital experiences. With expertise in Python, JavaScript, and TypeScript, I excel in building responsive applications and scalable 
+                data systems that bridge design and functionality.
               </p>
             </div>
             <span
@@ -225,7 +262,7 @@ export default function Home() {
               data-scroll-speed=".06"
               className="flex flex-row items-center space-x-1.5 pt-6"
             >
-              <Link href="mailto:wendoj@proton.me" passHref>
+              <Link href="mailto:flavia.iespa@uni.minerva.edu" passHref>
                 <Button>
                   Get in touch <ChevronRight className="ml-1 h-4 w-4" />
                 </Button>
@@ -269,19 +306,12 @@ export default function Home() {
             className="my-14 flex max-w-6xl flex-col justify-start space-y-10"
           >
             <h2 className="py-16  pb-2 text-3xl font-light leading-normal tracking-tighter text-foreground xl:text-[40px]">
-              I&apos;m an experienced full-stack developer proficient in{" "}
-              <Link
-                href="https://create.t3.gg/"
-                target="_blank"
-                className="underline"
-              >
-                TypeScript, Tailwind, and Next.js
-              </Link>{" "}
-              since 2021. My experience spans from startups to mid-sized
-              companies, where I&apos;ve been instrumental in the entire product
-              design process; from ideation and wireframing, through
-              prototyping, to the delivery of the final product, all while
-              efficiently collaborating with cross-functional teams.
+              I&apos;m an experienced full-stack developer proficient in Python, TypeScript, React and AWS
+              since 2021. My career spans various roles, from biotech, to fintech and startups, where I have been a 
+              key contributor to the entire development lifecycle. My work includes designing and deploying efficient 
+              data pipelines, building user-centric applications, and enhancing complex systems. 
+              I am skilled in both front-end and back-end technologies, consistently delivering high-quality, 
+              scalable solutions while collaborating seamlessly with cross-functional teams.
             </h2>
             <div className="grid grid-cols-2 gap-8 xl:grid-cols-3">
               {aboutStats.map((stat) => (
@@ -300,10 +330,8 @@ export default function Home() {
             </div>
           </div>
         </section>
-
         {/* Projects */}
         <section id="projects" data-scroll-section>
-          {/* Gradient */}
           <div className="relative isolate -z-10">
             <div
               className="absolute inset-x-0 -top-40 transform-gpu overflow-hidden blur-[100px] sm:-top-80 lg:-top-60"
@@ -329,128 +357,117 @@ export default function Home() {
               I&apos;ve worked on a variety of projects, from small websites to
               large-scale web applications. Here are some of my favorites:
             </p>
-
-            {/* Carousel */}
-            <div className="mt-14">
-              <Carousel setApi={setCarouselApi} className="w-full">
-                <CarouselContent>
-                  {projects.map((project) => (
-                    <CarouselItem key={project.title} className="md:basis-1/2">
-                      <Card id="tilt">
-                        <CardHeader className="p-0">
-                          <Link href={project.href} target="_blank" passHref>
-                            {project.image.endsWith(".webm") ? (
-                              <video
-                                src={project.image}
-                                autoPlay
-                                loop
-                                muted
-                                className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
-                              />
-                            ) : (
-                              <Image
-                                src={project.image}
-                                alt={project.title}
-                                width={600}
-                                height={300}
-                                quality={100}
-                                className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
-                              />
-                            )}
-                          </Link>
-                        </CardHeader>
-                        <CardContent className="absolute bottom-0 w-full bg-background/50 backdrop-blur">
-                          <CardTitle className="border-t border-white/5 p-4 text-base font-normal tracking-tighter">
-                            {project.description}
-                          </CardTitle>
-                        </CardContent>
-                      </Card>
-                    </CarouselItem>
-                  ))}
-                </CarouselContent>
-                <CarouselPrevious />
-                <CarouselNext />
-              </Carousel>
-              <div className="py-2 text-center text-sm text-muted-foreground">
-                <span className="font-semibold">
-                  {current} / {count}
-                </span>{" "}
-                projects
-              </div>
+            
+            <div className="mt-14 grid grid-cols-1 gap-8 sm:grid-cols-2 xl:grid-cols-3">
+              {projects.map((project) => (
+                <Card key={project.title} className="hover:shadow-lg">
+                  <CardHeader className="p-0">
+                    <a href={project.href} target="_blank" rel="noopener noreferrer">
+                      {project.image.endsWith(".webm") ? (
+                        <video
+                          src={project.image}
+                          autoPlay
+                          loop
+                          muted
+                          className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
+                        />
+                      ) : (
+                        <Image
+                          src={project.image}
+                          alt={project.title}
+                          width={600}
+                          height={300}
+                          quality={100}
+                          className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
+                        />
+                      )}
+                    </a>
+                  </CardHeader>
+                  <CardContent className="p-4">
+                    <CardTitle className="text-lg font-semibold">{project.title}</CardTitle>
+                    <p className="mt-2 text-sm text-muted-foreground">
+                      {project.description}
+                    </p>
+                    <a
+                      href={project.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-4 inline-block text-primary hover:underline"
+                    >
+                      Learn more
+                    </a>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
           </div>
         </section>
+      {/* Solutions for Businesses */}
+      <section id="solutions" data-scroll-section className="my-64">
+        <div
+          data-scroll
+          data-scroll-speed=".4"
+          data-scroll-position="top"
+          className="my-24 flex flex-col justify-start space-y-10"
+        >
+          <span className="text-gradient clash-grotesk text-sm font-semibold tracking-tighter">
+            🚀 Tailored Solutions
+          </span>
+          <h2 className="mt-3 text-4xl font-semibold tracking-tight xl:text-6xl">
+            Here are some of my skills
+          </h2>
+          <p className="mt-1.5 text-base tracking-tight text-muted-foreground xl:text-lg">
+            I specialize in delivering innovative solutions that enhance efficiency, 
+            improve user experiences, and drive measurable outcomes for businesses.
+          </p>
 
-        {/* Services */}
-        <section id="services" data-scroll-section>
-          <div
-            data-scroll
-            data-scroll-speed=".4"
-            data-scroll-position="top"
-            className="my-24 flex flex-col justify-start space-y-10"
-          >
-            <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{
-                duration: 1,
-                staggerChildren: 0.5,
-              }}
-              viewport={{ once: true }}
-              className="grid items-center gap-1.5 md:grid-cols-2 xl:grid-cols-3"
-            >
-              <div className="flex flex-col py-6 xl:p-6">
-                <h2 className="text-4xl font-medium tracking-tight">
-                  Need more info?
-                  <br />
-                  <span className="text-gradient clash-grotesk tracking-normal">
-                    I got you.
-                  </span>
-                </h2>
-                <p className="mt-2 tracking-tighter text-secondary-foreground">
-                  Here are some of the services I offer. If you have any
-                  questions, feel free to reach out.
-                </p>
-              </div>
-              {services.map((service) => (
-                <div
-                  key={service.service}
-                  className="flex flex-col items-start rounded-md bg-white/5 p-14 shadow-md backdrop-blur transition duration-300 hover:-translate-y-0.5 hover:bg-white/10 hover:shadow-md"
-                >
-                  <service.icon className="my-6 text-primary" size={20} />
-                  <span className="text-lg tracking-tight text-foreground">
+          {/* Expertise Grid */}
+          <div className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2 xl:grid-cols-3">
+            {services.map((service) => (
+              <Card key={service.service} className="hover:shadow-lg">
+                <CardHeader className="flex items-center space-x-4 p-4">
+                  <service.icon className="text-primary w-10 h-10" />
+                  <CardTitle className="text-lg font-semibold">
                     {service.service}
-                  </span>
-                  <span className="mt-2 tracking-tighter text-muted-foreground">
-                    {service.description}
-                  </span>
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="p-4">
+                  <p className="text-sm text-muted-foreground">{service.description}</p>
+                </CardContent>
+                <div className="p-4">
+                  <Button variant="outline" className="w-full">
+                    Learn More
+                  </Button>
                 </div>
-              ))}
-            </motion.div>
+              </Card>
+            ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Contact */}
-        <section id="contact" data-scroll-section className="my-64">
-          <div
-            data-scroll
-            data-scroll-speed=".4"
-            data-scroll-position="top"
-            className="flex flex-col items-center justify-center rounded-lg bg-gradient-to-br from-primary/[6.5%] to-white/5 px-8 py-16 text-center xl:py-24"
-          >
-            <h2 className="text-4xl font-medium tracking-tighter xl:text-6xl">
-              Let&apos;s work{" "}
-              <span className="text-gradient clash-grotesk">together.</span>
-            </h2>
-            <p className="mt-1.5 text-base tracking-tight text-muted-foreground xl:text-lg">
-              I&apos;m currently available for freelance work and open to
-              discussing new projects.
-            </p>
-            <Link href="mailto:wendoj@proton.me" passHref>
-              <Button className="mt-6">Get in touch</Button>
-            </Link>
-          </div>
-        </section>
+
+      {/* Contact */}
+      <section id="contact" data-scroll-section className="my-64">
+        <div
+          data-scroll
+          data-scroll-speed=".4"
+          data-scroll-position="top"
+          className="flex flex-col items-center justify-center rounded-lg bg-gradient-to-br from-primary/[6.5%] to-white/5 px-8 py-16 text-center xl:py-24"
+        >
+          <h2 className="text-4xl font-medium tracking-tighter xl:text-6xl">
+            Let&apos;s create{" "}
+            <span className="text-gradient clash-grotesk">innovative solutions</span>{" "}
+            together.
+          </h2>
+          <p className="mt-1.5 text-base tracking-tight text-muted-foreground xl:text-lg">
+            I specialize in full-stack development, data engineering, and cloud-based
+            solutions. Let&apos;s collaborate to bring your ideas to life.
+          </p>
+          <Link href="mailto:flavia.iespa@uni.minerva.edu" passHref>
+            <Button className="mt-6">Reach out to me</Button>
+          </Link>
+        </div>
+      </section>
       </div>
     </Container>
   );

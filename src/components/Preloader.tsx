@@ -25,9 +25,9 @@ const slideUp = {
 
 const words = [
   "Hello",
-  "Bonjour",
+  "Olá",
+  "Hole",
   "Ciao",
-  "Olà",
   "やあ",
   "Hallå",
   "Guten tag",

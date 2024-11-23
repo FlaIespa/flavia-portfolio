@@ -82,7 +82,7 @@ export default function Container(props: ContainerProps) {
   const { children, ...customMeta } = props;
   const router = useRouter();
   const meta = {
-    title: "Wendo",
+    title: "Flavia Portfolio",
     description: `Full-stack website developer and TypeScript enthusiast.`,
     image: "/assets/logo.webp",
     type: "website",
@@ -163,7 +163,7 @@ export default function Container(props: ContainerProps) {
           </button>
         </div>
         <Link href="/">
-          <span className="text-lg font-semibold">wendo</span>
+          <span className="text-lg font-semibold">Fla's Portfolio</span>
         </Link>
 
         {/* Desktop menu */}
