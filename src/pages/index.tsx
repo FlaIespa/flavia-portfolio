@@ -75,7 +75,7 @@ const projects = [
   },
   {
     title: "Math Game",
-    description: "Classic Tic-Tac-Toe game with an AI opponent using the minimax algorithm with alpha-beta pruning.",
+    description: "A responsive Flask-based web application that offers an interactive two-player experience with random arithmetic questions, score and time tracking, a dynamic timer display, and a sleek UI to make practicing basic math engaging and fun.",
     image: "/assets/mathgame.png",
     href: "https://github.com/FlaIespa/Math_game",
   },
