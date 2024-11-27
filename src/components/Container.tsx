@@ -163,7 +163,7 @@ export default function Container(props: ContainerProps) {
           </button>
         </div>
         <Link href="/">
-          <span className="text-lg font-semibold">Fla's Portfolio</span>
+          <span className="text-lg font-semibold">Fla Portfolio</span>
         </Link>
 
         {/* Desktop menu */}
